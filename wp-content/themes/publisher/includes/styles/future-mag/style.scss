@@ -1,0 +1,262 @@
+/*
+
+ThemeName |-> Future Mag
+
+*/
+@import "../_demo-helper/general";
+
+// Header Style
+$header: 'style-8';
+$header_height: 50px;
+
+$menu_current_bg_style: '.header-style-8';
+$menu_current_bg: rgba(255, 255, 255, .1);
+
+// Block Layout
+$box: box;
+$box_remove_modern_grids: true;
+$blocks_items_bottom_line: solid 1px #ededed;
+$blocks_items_bottom_padding: 20px;
+$blocks_items_bottom_margin: 20px;
+
+/* Widget */
+$about_us_text_align: left;
+$about_us_social_icon_size: 37px;
+$about_us_social_icon_font_size: 13px;
+
+$newsletter_border_radius_inputs: 0;
+
+@import "../_demo-helper/helper";
+
+/**
+ * => Optimized Fonts
+ **/
+.bs-about,
+.post-meta,
+.post-title,
+a.read-more,
+.post-summary,
+.entry-content p,
+.btn-bs-pagination,
+.bs-listing .title,
+.newsletter-subscribe,
+.listing-item .title a,
+.term-badges.floated a,
+.bs-numbered-pagination,
+.mega-links > .menu-item a,
+ul.menu.footer-menu li > a,
+.section-heading > .h-text,
+.better-newsticker .heading,
+.section-heading a > .h-text,
+.site-footer .footer-widgets,
+.off-canvas-menu > ul > li > a,
+.pagination.bs-links-pagination,
+.post-count-badge.pcb-t1.pcb-s1,
+.site-header .main-menu > li > a,
+.site-header .topbar .topbar-inner,
+.better-newsticker ul.news-list li a,
+.site-footer .bs-about .about-link a,
+.term-badges .term-badge:first-child a,
+.site-footer .copy-1, .site-footer .copy-2,
+.bs-subscribe-newsletter .subscribe-message,
+.footer-widgets .widget_nav_menu ul.menu li a {
+  @include optimize_font;
+}
+
+/**
+ * => General style
+ **/
+a, a:focus, a:hover {
+  text-decoration: none;
+  -webkit-transition: all .4s ease;
+  -moz-transition: all .4s ease;
+  -o-transition: all .4s ease;
+  transition: all .4s ease;
+}
+
+/**
+ * => Site Header
+ **/
+.site-header {
+  &.header-style-8 {
+	.main-menu.menu {
+	  & > li {
+		margin: 0;
+
+		& > a {
+		  padding: 0 23px;
+
+		}
+	  }
+	}
+  }
+
+  .off-canvas-menu-icon .off-canvas-menu-icon-el {
+	width: 100%;
+  }
+}
+
+/* Section Heading */
+.section-heading.sh-t3.sh-s1 {
+  &:after {
+	height: 1px;
+  }
+
+  .h-text {
+	line-height: 20px;
+  }
+}
+
+.listing-mix-4-8 {
+  .listing-classic-2 {
+	padding-bottom: 15px;
+	margin-bottom: 20px;
+	border-bottom: solid 1px #ededed;
+	.listing-inner {
+	  border: none !important;
+	  padding: 0;
+
+	  .featured {
+		margin: 0 0 17px;
+	  }
+	}
+  }
+}
+
+/* Sidebar Column */
+.sidebar,
+.bs-vc-sidebar-column {
+  .listing-item-blog, .listing-thumbnail.listing-thumbnail .listing-item-thumbnail {
+	padding-bottom: 15px !important;
+	margin-bottom: 15px !important;
+
+	&:last-child {
+	  margin-bottom: 0 !important;
+	  padding-bottom: 0 !important;
+	}
+  }
+}
+
+/* MG 3 */
+.bs-listing-modern-grid-listing-3 {
+  background: #ffffff !important;
+  padding: 20px !important;
+
+  .listing-mg-3-item {
+	.content-container {
+	  bottom: 10px;
+
+	  .title {
+		text-align: start !important;
+	  }
+
+	  .post-meta {
+		text-align: start !important;
+		margin-top: 2px !important;
+	  }
+	}
+  }
+
+  .bs-slider-controls {
+	height: 17px;
+  }
+}
+
+.listing.columns-1 .listing-item {
+  &:last-child {
+	margin-bottom: 0;
+  }
+}
+
+.bs-pagination-wrapper {
+  .listing.columns-1 .listing-item {
+	&:last-child {
+	  margin-bottom: 20px;
+	}
+  }
+}
+
+/* Thumbnail 2 */
+.listing-tb-2.scolumns-3 {
+  .listing-item {
+	padding-bottom: 0 !important;
+	border-bottom: 0 !important;
+  }
+}
+
+/* Pagination */
+.bs-pagination.bs-ajax-pagination.more_btn .btn-bs-pagination {
+  width: 100%;
+  line-height: 38px !important;
+  border: solid 1px #c4c4c4;
+
+  span {
+	font-size: 12px;
+	font-weight: bold;
+	color: #000000;
+  }
+
+  &:hover {
+	span {
+	  color: #ffffff;
+	}
+  }
+
+  &.bs-pagination-in-loading {
+	span {
+	  color: #FFFFFF;
+	}
+  }
+
+  &.disabled {
+	&:hover {
+	  border-color: #000000;
+
+	  span {
+		color: #000000;
+	  }
+	}
+  }
+}
+
+/* Newsletter */
+.site-footer {
+  .section-heading.sh-t1.sh-s1 {
+	&:after {
+	  height: 2px;
+	  margin-top: -1px;
+	}
+  }
+
+  .footer-widgets {
+	.sidebar .listing-thumbnail.listing-thumbnail .listing-item-thumbnail {
+	  padding-bottom: 0 !important;
+	  border-bottom: none !important;
+	  margin-bottom: 20px !important;
+	}
+
+	.widget_bs-subscribe-newsletter {
+	  background-color: transparent !important;
+	  padding: 0 !important;
+
+	  .subscribe-message {
+		text-align: left;
+		max-width: 100%;
+	  }
+
+	  form {
+		max-width: 100%;
+
+		.newsletter-email {
+		  background-color: rgba(255, 255, 255, 0.1);
+		  border: none;
+		}
+
+		.newsletter-subscribe {
+		  font-weight: 400;
+		  text-transform: uppercase !important;
+		}
+	  }
+	}
+  }
+}

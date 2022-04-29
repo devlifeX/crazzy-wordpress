@@ -1,0 +1,262 @@
+/*
+
+ThemeName |-> Technet
+
+*/
+@import "../_demo-helper/general";
+
+/* Site Header */
+$header: 'style-8';
+$header_height: 90px;
+
+/* Block Styles */
+$blocks_items_bottom_line: solid 1px rgba(0, 0, 0, 0.09);
+$blocks_items_bottom_margin: 25px;
+$blocks_items_bottom_padding: 25px;
+
+/* Footer Styles */
+$footer_style: center;
+
+$about_us_social_icon_font_size: 15px;
+$about_us_social_icon_size: 37px;
+
+@import "../_demo-helper/helper";
+
+/**
+ * => Optimized Fonts
+ **/
+.bs-about,
+.post-meta,
+.post-title,
+a.read-more,
+.post-summary,
+.entry-content p,
+.btn-bs-pagination,
+.bs-listing .title,
+.newsletter-subscribe,
+.listing-item .title a,
+.term-badges.floated a,
+.bs-numbered-pagination,
+.mega-links > .menu-item a,
+ul.menu.footer-menu li > a,
+.section-heading > .h-text,
+.better-newsticker .heading,
+.section-heading a > .h-text,
+.site-footer .footer-widgets,
+.off-canvas-menu > ul > li > a,
+.pagination.bs-links-pagination,
+.post-count-badge.pcb-t1.pcb-s1,
+.site-header .main-menu > li > a,
+.site-header .topbar .topbar-inner,
+.better-newsticker ul.news-list li a,
+.site-footer .bs-about .about-link a,
+.term-badges .term-badge:first-child a,
+.site-footer .copy-1, .site-footer .copy-2,
+.bs-subscribe-newsletter .subscribe-message,
+.footer-widgets .widget_nav_menu ul.menu li a {
+  @include optimize_font;
+}
+
+/**
+ * => General style
+ **/
+a, a:focus, a:hover {
+  text-decoration: none;
+  -webkit-transition: all .4s ease;
+  -moz-transition: all .4s ease;
+  -o-transition: all .4s ease;
+  transition: all .4s ease;
+}
+
+/* Site Header */
+.site-header.header-style-8.header-style-8 {
+  .off-canvas-menu-icon .off-canvas-menu-icon-el {
+	width: 100%;
+  }
+
+  .main-menu {
+	& > li {
+	  line-height: 90px;
+	  margin: 0;
+
+	  & > a {
+		line-height: 46px;
+		padding: 0 19px;
+
+		&:before {
+		  display: none;
+		}
+	  }
+
+	  &.current-menu-item {
+		a {
+		  border: solid 1px rgba(0, 0, 0, 0.1);
+		  border-radius: 5px;
+		}
+	  }
+	}
+  }
+}
+
+/* Newsletter */
+.bs-newsletter-pack.bsnp-t1.bsnp-s4 {
+  box-shadow: none !important;
+}
+
+/* Modern Grid */
+.listing-modern-grid-8 {
+  .listing-mg-8-item {
+	.title {
+	  line-height: 1.15 !important;
+	}
+  }
+
+  .listing-mg-8-item {
+	&.listing-item-2 .title {
+	  font-size: 68%;
+	}
+
+	&.listing-item-3,
+	&.listing-item-4 {
+	  .title {
+		font-size: 52%;
+	  }
+	}
+
+	&.listing-item-5 .title {
+	  font-size: 62%;
+	}
+  }
+}
+
+/* Modern Grid 1 */
+.listing-modern-grid-1.l-3 {
+  .listing-item {
+	.title {
+	  font-size: inherit;
+	}
+
+	&.listing-item-2 {
+	  .post-meta {
+		display: block;
+	  }
+	}
+
+	&.listing-item-3,
+	&.listing-item-4 {
+	  .title {
+		font-size: 75%;
+	  }
+	}
+  }
+}
+
+/* Pagination */
+.bs-pagination.bs-ajax-pagination.more_btn {
+  margin-top: 35px;
+
+  .btn-bs-pagination {
+	width: 100%;
+	height: 51px;
+	line-height: 51px !important;
+	font-size: 14px !important;
+	font-weight: bold !important;
+	border-color: rgba(0, 0, 0, 0.15);
+	background-color: rgba(232, 232, 232, 0.3);
+
+	span {
+	  color: #515151;
+	  transition: .3s;
+	}
+
+	.loading {
+	  color: #FFFFFF;
+	}
+
+	.loaded {
+	  i {
+		display: none;
+	  }
+	}
+
+	&:hover {
+	  span.loaded {
+		color: #FFFFFF;
+	  }
+	}
+  }
+}
+
+.pagination.bs-numbered-pagination {
+  .page-numbers {
+	color: #515151;
+	font-weight: 400 !important;
+	min-width: 35px;
+	height: 35px;
+	line-height: 35px;
+	border-radius: 4px;
+	background-color: rgba(232, 232, 232, 0.3);
+  }
+
+  .current {
+	color: #FFFFFF !important;
+  }
+}
+
+/* Newsletter */
+.bs-newsletter-pack.bsnp-t1.bsnp-s4 {
+  border: 5px solid #eee;
+
+  &:before {
+	display: none;
+  }
+
+  .bsnp-desc {
+	font-size: 12px;
+	line-height: 1.6;
+  }
+
+  .bsnp-title {
+	font-size: 19px;
+  }
+}
+
+/* About Us */
+.site-footer {
+  .footer-widgets.light-text {
+	padding: 55px 0 35px;
+
+	.widget {
+	  .bs-about {
+		.about-icons-list {
+		  .about-icon-item {
+			a {
+			  border-radius: 100%;
+			  border: solid 2px rgba(255, 255, 255, 0.2);
+			  box-shadow: none;
+			  i{
+			  line-height: 34px !important;
+			  }
+			}
+		  }
+		}
+	  }
+	}
+  }
+
+  .footer-menu-container {
+	padding-top: 0;
+
+	ul.menu.footer-menu li {
+	  margin: 10px 16px !important;
+	}
+  }
+
+  .footer-copy-row {
+	padding-top: 28px;
+  }
+
+  .copy-footer {
+	padding-bottom: 30px;
+  }
+}

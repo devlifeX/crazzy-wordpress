@@ -1,0 +1,107 @@
+version: "3.7"
+
+services:
+  db:
+    container_name: db
+    image: mysql:5.7
+    volumes:
+      - ./.docker/db:/var/lib/mysql
+      - ./.docker/services/mysql/conf.d:/etc/mysql/conf.d
+    restart: always
+    env_file:
+      - .env
+    environment:
+      MYSQL_USER: "${DB_USER}"
+      MYSQL_PASSWORD: "${MYSQL_PASSWORD}"
+      MYSQL_ROOT_PASSWORD: "${MYSQL_ROOT_PASSWORD}"
+      MYSQL_DATABASE: "${DB_NAME}"
+    networks:
+      - haproxy_network
+
+  webserver:
+    container_name: webserver
+    image: devlifex/nginx-redis:v1
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    networks:
+      - haproxy_network
+    links:
+      - wordpress
+      - redis
+    environment:
+      - NGINX_HOST=${NGINX_HOST}
+      - NGINX_PORT=${NGINX_PORT}
+      - WORDPRESS_APP=${WORDPRESS_APP}
+      - WORDPRESS_APP_PORT=${WORDPRESS_APP_PORT}
+    volumes:
+      - haproxy_wordpress_dir:/var/www/html
+      - ./.docker/logs/nginx:/var/log/nginx/
+      - ./.docker/services/nginx-common/nginx.conf:/etc/nginx/nginx.conf
+      - ./.docker/services/nginx-dev/conf.d/:/etc/nginx/conf.d/
+      - ./.docker/services/nginx-dev/common/:/etc/nginx/common/
+      - ./wp-content:/var/www/html/wp-content
+      - ./.htpasswd:/var/www/html/.htpasswd
+
+  wordpress:
+    container_name: wordpress
+    image: devlifex/wordpress:php7.4-fpm-ioncube
+    volumes:
+      - haproxy_wordpress_dir:/var/www/html
+      - ./.docker/services/php/www.conf:/usr/local/etc/php-fpm.d/www.conf
+      - ./wp-content:/var/www/html/wp-content
+      - ./wp-config.php:/var/www/html/wp-config.php
+      - .env:/var/www/html/.env
+      - ./env.php:/var/www/html/env.php
+      - ./wp-content/uploads:/var/www/html/wp-content/uploads
+      - ./.docker/services/php/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
+
+    depends_on:
+      - db
+      - redis
+    links:
+      - db
+      - redis
+    restart: always
+    ports:
+      - "127.0.0.1:9000:9000"
+    networks:
+      - haproxy_network
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: "phpmyadmin"
+    links:
+      - db
+    volumes:
+      - ./.docker/services/php/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
+    env_file:
+      - .env
+    environment:
+      PMA_HOST: "${PMA_HOST}"
+      PMA_PORT: "${PMA_DB_PORT}"
+      MYSQL_ROOT_PASSWORD: "${MYSQL_ROOT_PASSWORD}"
+
+    ports:
+      - "${PMA_PORT}:80"
+    networks:
+      - haproxy_network
+    restart: always
+
+  redis:
+    container_name: "redis"
+    image: redis:latest
+    ports:
+      - "127.0.0.1:6379:6379"
+    restart: always
+    networks:
+      - haproxy_network
+
+networks:
+  haproxy_network:
+    driver: bridge
+
+volumes:
+  haproxy_wordpress_dir:
+    driver: local

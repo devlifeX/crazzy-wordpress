@@ -1,0 +1,226 @@
+/*
+
+ThemeName |-> Magz
+
+*/
+@import "../_demo-helper/general";
+
+/* Topbar */
+$topbar_height: 28px;
+
+/* Header */
+$header: 'style-2';
+$header_height: 54px;
+
+$menu_current_bg_style: '.header-style-2';
+$menu_current_bg: transparent;
+
+/* Layout */
+$layout_boxed_padding: 17px;
+
+/* Term Badge */
+$term_badges: bottom-left;
+
+/* About us */
+$about_us_text_align: left;
+$about_us_social_icon_font_size: 13px;
+$about_us_social_icon_size: 37px;
+
+@import "../_demo-helper/helper";
+
+/**
+ * => Optimized Fonts
+ **/
+.bs-about,
+.post-meta,
+.post-title,
+a.read-more,
+.post-summary,
+.entry-content p,
+.btn-bs-pagination,
+.bs-listing .title,
+.newsletter-subscribe,
+.listing-item .title a,
+.term-badges.floated a,
+.bs-numbered-pagination,
+.mega-links > .menu-item a,
+ul.menu.footer-menu li > a,
+.section-heading > .h-text,
+.better-newsticker .heading,
+.section-heading a > .h-text,
+.site-footer .footer-widgets,
+.off-canvas-menu > ul > li > a,
+.pagination.bs-links-pagination,
+.post-count-badge.pcb-t1.pcb-s1,
+.site-header .main-menu > li > a,
+.site-header .topbar .topbar-inner,
+.better-newsticker ul.news-list li a,
+.site-footer .bs-about .about-link a,
+.term-badges .term-badge:first-child a,
+.site-footer .copy-1, .site-footer .copy-2,
+.bs-subscribe-newsletter .subscribe-message,
+.footer-widgets .widget_nav_menu ul.menu li a {
+  @include optimize_font;
+}
+
+/**
+ * => General style
+ **/
+a, a:focus, a:hover {
+  text-decoration: none;
+  -webkit-transition: all .4s ease;
+  -moz-transition: all .4s ease;
+  -o-transition: all .4s ease;
+  transition: all .4s ease;
+}
+
+/* Site Header */
+.site-header {
+  .off-canvas-menu-icon-container {
+    line-height: 48px !important;
+  }
+
+  .menu-action-buttons {
+    right: 8px;
+  }
+
+  .search-container .search-handler {
+    line-height: 26px;
+  }
+
+  .main-menu-wrapper.main-menu-wrapper {
+    .main-menu-container {
+      border-bottom-width: 4px !important;
+
+      .main-menu.menu {
+        & > li {
+          margin: 0 !important;
+
+          & > a {
+            padding: 0 20px;
+            line-height: 51px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Section Heading */
+.section-heading.sh-t1.sh-s2 {
+  margin-bottom: 15px;
+
+  &:after {
+    opacity: 1;
+    height: 3px;
+    margin-top: -2px;
+  }
+}
+
+.section-heading.sh-t6.sh-s1 {
+  &:before {
+    top: auto;
+    bottom: 0;
+  }
+}
+
+/* Slider 1 */
+.bs-slider-1-item {
+  .content-container {
+    padding: 0 0 30px;
+  }
+
+  .term-badges.floated {
+    top: 0;
+    text-align: left;
+    padding: 0 30px;
+  }
+
+  .title {
+    max-width: 100%;
+    text-align: left !important;
+  }
+
+  .post-meta {
+    text-align: left !important;
+  }
+}
+
+/* Social Network */
+.better-social-counter.style-style-6 {
+  .item-icon {
+    background-color: #979797;
+    border: none;
+  }
+}
+
+/* Newsletter */
+.bs-newsletter-pack.bsnp-t1 {
+  padding: 88px 21px 27px !important;
+
+  .bsnp-title {
+    font-size: 17px;
+  }
+
+  .bsnp-desc {
+    font-size: 12px;
+  }
+
+  .bsnp-after {
+    font-size: 12px;
+  }
+
+  input.bsnp-input {
+    font-size: 10px !important;
+  }
+}
+
+/* Category */
+.bs-popular-categories .bs-popular-terms-list {
+  padding: 0 !important;
+}
+
+/* Site Footer */
+.site-footer {
+  .footer-menu-container {
+    margin-bottom: 20px;
+
+    ul.menu.footer-menu > li {
+      margin-right: 40px;
+    }
+  }
+
+  .footer-widgets.light-text {
+    /* Section Heading */
+    .section-heading.sh-t1 {
+      &:after {
+        background: rgba(255, 255, 255, .22);
+        opacity: 1;
+      }
+    }
+
+    /* About Us */
+    .bs-about .about-icons-list .about-icon-item a {
+      box-shadow: none !important;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 2px;
+
+      &:hover {
+        background: none rgba(255, 255, 255, 0.2) !important;
+      }
+    }
+  }
+}
+
+/* RTL */
+.rtl {
+  .site-header .menu-action-buttons {
+    left: 8px;
+    right: auto;
+  }
+
+  .listing-item-tb-1.has-post-thumbnail .post-count-badge.pcb-t1.pcb-s1 {
+    left: auto;
+    right: -10px;
+  }
+}

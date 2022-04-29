@@ -1,0 +1,73 @@
+[mysqld]
+max_allowed_packet              = 256M
+max_connect_errors              = 1000000
+skip_external_locking
+
+default_storage_engine          = InnoDB
+innodb_buffer_pool_instances    = 50
+innodb_buffer_pool_size         = 3G    
+innodb_file_per_table           = 1
+innodb_flush_log_at_trx_commit  = 0
+innodb_flush_method             = O_DIRECT
+innodb_log_buffer_size          = 16M
+innodb_log_file_size            = 512M
+innodb_stats_on_metadata        = 0
+
+
+                               
+innodb_read_io_threads          = 64
+innodb_write_io_threads         = 64
+
+query_cache_limit               = 4M 
+query_cache_size                = 64M   
+query_cache_type                = 1     
+
+key_buffer_size                 = 100M   
+
+low_priority_updates            = 1
+concurrent_insert               = 2
+
+
+max_connections                 = 1000   
+
+back_log                        = 512
+thread_cache_size               = 1024
+thread_stack                    = 256K
+
+interactive_timeout             = 180
+wait_timeout                    = 180
+
+join_buffer_size                = 4M    
+read_buffer_size                = 3M    
+read_rnd_buffer_size            = 4M    
+sort_buffer_size                = 4M    
+
+table_definition_cache          = 40000 
+table_open_cache                = 40000 
+open_files_limit                = 60000 
+                                        
+
+max_heap_table_size             = 128M
+tmp_table_size                  = 128M
+
+
+ft_min_word_len                 = 3     
+
+
+log_queries_not_using_indexes   = 1
+long_query_time                 = 5
+slow_query_log                  = 0     
+
+[mysqldump]
+
+quick
+quote_names
+max_allowed_packet              = 64M
+
+
+[mariadb]
+
+thread_handling=pool-of-threads
+
+skip-name-resolve
+
