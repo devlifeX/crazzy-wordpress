@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The base configuration for WordPress
  *
@@ -55,15 +56,15 @@ define('DB_COLLATE', '');
  *
  * @since 2.6.0
  */
-define('AUTH_KEY', 'l.SA4J0,vIcoVDTA?2BYNqrK)Zl)9fnNGB:oHBKr8S^;;%>FaAEYyqqrM7Nnobf+');
-define('SECURE_AUTH_KEY', 'i+2Nx6cQt:)B|@/DHQ;X@62Hk@NI6/Ue$GqtqJ*._ZPkCutEs9RtQ%i0ujdJ,kyc');
-define('LOGGED_IN_KEY', 'z?8L[J;jh,%:i>j7_RA`1lk):JZYM)rD0+{bC.TAu^MC+k)|<;ljKEL<qX%@QD$K');
-define('NONCE_KEY', 'z}4e|+_mnOuz>34}EYwdf62nZgD[%Uf*c`JtM>cC4b<rAG>8#!u~W=^^>E^3bWQ9');
-define('AUTH_SALT', 'u F#EDx]~{l8f`@;[IIQl84{n$M;dNd[|.WM1rb[SI t_xh$yUIP0NkNPZ<~ol);');
-define('SECURE_AUTH_SALT', 'Re(7 e}=|?AI_z8qxX|_hkmyHR)MP=9n.,zAh?}jz#|EA%Fd^^:.<HQHwQ)RB}CV');
-define('LOGGED_IN_SALT', 'aRZ*{qUrW.we{zO}:<,. r&nP.RdWc+mi=tZp<@zF:xl$.XE *V({!WHz[=;(^%n');
-define('NONCE_SALT', '80KQ% =bS2|=D-+T,Vv|+l1A}r)e4hp>Zxy]#M</*C1Zkig3..JU5M)E>dsPsEQ`');
-define('WP_CACHE_KEY_SALT', 'LNbgWfmz1 aG]C6k~M_ac_8TAa^YS~R.:uPD*^b3$q`AUA:)vQ7D!r40d<g:;+*S');
+define('AUTH_KEY', 'AUTH_KEY goes HERE!!!!');
+define('SECURE_AUTH_KEY', 'SECURE_AUTH_KEY goes HERE!!!!');
+define('LOGGED_IN_KEY', 'LOGGED_IN_KEY goes HERE!!!!');
+define('NONCE_KEY', 'NONCE_KEY goes HERE!!!!');
+define('AUTH_SALT', 'AUTH_SALT goes HERE!!!!');
+define('SECURE_AUTH_SALT', 'SECURE_AUTH_SALT goes HERE!!!!');
+define('LOGGED_IN_SALT', 'LOGGED_IN_SALT goes HERE!!!!');
+define('NONCE_SALT', 'NONCE_SALT goes HERE!!!!');
+define('WP_CACHE_KEY_SALT', 'WP_CACHE_KEY_SALT goes HERE!!!!');
 
 /**
  * WordPress Database Table prefix.
@@ -82,7 +83,3 @@ if (!defined('ABSPATH')) {
 
 /** Sets up WordPress vars and included files. */
 require_once ABSPATH . 'wp-settings.php';
-
-
-@ini_set( 'memory_limit', '2048M' );
-@ini_set('max_execution_time', 120); 
