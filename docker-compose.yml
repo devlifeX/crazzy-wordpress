@@ -1,6 +1,20 @@
 version: "3.7"
 
 services:
+  # docker run -it -v /home/devlife/dev/haproxy/.docker/services/haproxy/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg --rm --name haproxy-syntax-check haproxy -c -f /usr/local/etc/haproxy/haproxy.cfg
+  haproxy:
+    image: haproxy:latest
+    container_name: haproxy
+    restart: always
+    ports:
+      - "80:80"
+    volumes:
+      - ./.docker/services/haproxy/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg
+    sysctls:
+      - net.ipv4.ip_unprivileged_port_start=0
+    networks:
+      - haproxy_network
+
   node:
     build:
       context: .
@@ -37,9 +51,6 @@ services:
     container_name: webserver
     image: devlifex/nginx-redis:v1
     restart: always
-    ports:
-      - "80:80"
-      - "443:443"
     networks:
       - haproxy_network
     links:
