@@ -51,9 +51,9 @@ services:
       - haproxy_wordpress_dir:/var/www/html
       - ./.docker/services/php/www.conf:/usr/local/etc/php-fpm.d/www.conf
       - ./wp-content:/var/www/html/wp-content
-      - ./wp-config.php:/var/www/html/wp-config.php
       - .env:/var/www/html/.env
       - ./env.php:/var/www/html/env.php
+      - ./wp-config.php:/var/www/html/wp-config.php
       - ./wp-content/uploads:/var/www/html/wp-content/uploads
       - ./.docker/services/php/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
 
